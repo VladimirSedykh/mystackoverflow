@@ -3,12 +3,11 @@ Stackoverflow::Application.routes.draw do
   root :to => 'posts#index'
 
 
-
   devise_for :users, :path => 'sessions'
 
-  resources :users do
+  # resources :users do
     resources :posts
-  end
+  # end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

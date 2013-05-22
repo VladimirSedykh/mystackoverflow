@@ -3,19 +3,28 @@
 	%head
 		%title
 			Stackoverflow
+		= stylesheet_link_tag "bootstrap", :media => "all"
+		= javascript_include_tag "bootstrap"
 		= stylesheet_link_tag "application", :media => "all"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 
 	%body
-		%strong 
-		%hr
-		%strong
-			- if user_signed_in? 
-				= current_user.email
-				= link_to "Sign out", destroy_user_session_path, :method => :delete
-			- else 
-				= link_to 'Sign in', new_user_session_path
-		%hr		
-						
-		= yield
+
+		.div{ :class => "navbar navbar-inverse navbar-fixed-top"}
+			.div{ :class => "navbar-inner"}
+				.container
+					- if user_signed_in? 
+						%span{ :class => "brand"} 
+							Welcome!
+							= current_user.email
+						%span{ :class => "brand"}	
+							= current_user.id
+						%span	
+							= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn'
+					- else 
+						%span
+							= link_to 'Sign in', new_user_session_path, :class => 'btn'	
+		
+		%section{ :class => "content-section"} 				
+			= yield
