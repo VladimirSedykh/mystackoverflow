@@ -27,7 +27,8 @@ gem 'devise'
 gem 'haml'
 
 group :production do
-	gem 'activerecord-postgresql-adapter'
+	gem 'pg'
+	#gem 'activerecord-postgresql-adapter'
 end
 
 
