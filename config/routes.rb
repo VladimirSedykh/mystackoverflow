@@ -1,5 +1,14 @@
 Stackoverflow::Application.routes.draw do
-  devise_for :users
+  # auto redirect 
+  root :to => 'posts#index'
+
+
+
+  devise_for :users, :path => 'sessions'
+
+  resources :users do
+    resources :posts
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
