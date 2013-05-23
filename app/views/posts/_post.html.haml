@@ -1,8 +1,10 @@
 %tr
+	%td
+		= post.user_id
 	%td 
 		= post.id
 	%td
-		= post.title
+		= link_to post.title, post
 	%td 
 		= post.body
 	%td	

@@ -1,0 +1,11 @@
+%h3 
+	= @post.title
+%p
+	= @post.body
+
+.author-q-block
+	.user-action-time
+		%span{ :title => @post.created_at.strftime("%B %d'%y at %H:%M")} 
+			asked
+			= @post.created_at.strftime("%B %d'%y at %H:%M")
+
