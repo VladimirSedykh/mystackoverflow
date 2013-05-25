@@ -5,6 +5,8 @@
 			Stackoverflow
 		= stylesheet_link_tag "bootstrap", :media => "all"
 		= javascript_include_tag "bootstrap"
+		= stylesheet_link_tag "jquery_ui", :media => "all"
+		= javascript_include_tag "jquery_ui"
 		= javascript_include_tag "application"
 		= stylesheet_link_tag "application", :media => "all"
 		= csrf_meta_tags
@@ -24,7 +26,8 @@
 							= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn'
 					- else 
 						%span
-							= link_to 'Sign in', new_user_session_path, :class => 'btn'		
+							= link_to 'Sign in', new_user_session_path, :class => 'btn'
+							= link_to 'Sign on', new_user_registration_path, :class => 'btn'				
 		
 		%section{ :class => "content-section"} 	
 			.container			

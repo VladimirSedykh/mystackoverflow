@@ -22,23 +22,10 @@
 			Title
 		%th
 			Body
+		%th
+			Tags
 		%th		
 	= render @posts
-
-- if user_signed_in? 
-	%h3 You questions
-	%table{ :class => "table table-striped table-bordered table-hover" }
-		%tr
-			%th
-				author ID
-			%th
-				post ID
-			%th
-				Title
-			%th
-				Body
-			%th		
-		= render @user_posts
 
 = link_to 'Create new Question', new_post_path, :class => 'btn btn-primary'	
 = link_to 'Create new Tag', new_tag_path, :class => 'btn btn-primary'	

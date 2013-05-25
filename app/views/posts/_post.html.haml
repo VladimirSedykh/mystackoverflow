@@ -7,5 +7,7 @@
 		= link_to post.title, post
 	%td 
 		= post.body
+	%td 
+		= post.tagslist
 	%td	
 		= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }

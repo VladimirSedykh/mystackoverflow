@@ -11,14 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523195502) do
+ActiveRecord::Schema.define(:version => 20130525151152) do
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
     t.text     "body"
-    t.text     "tags_list"
-    t.integer  "votes"
+    t.text     "tagslist"
     t.integer  "answers"
     t.integer  "view"
     t.boolean  "is_question"

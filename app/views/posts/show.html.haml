@@ -24,9 +24,4 @@
 		%span{ :title => @post.created_at.strftime("%B %d'%y at %H:%M")} 
 			asked
 			= @post.created_at.strftime("%B %d'%y at %H:%M")
-		%hr
-		%b
-			Related tags:
-			%p
-				= @post.tags_list
 

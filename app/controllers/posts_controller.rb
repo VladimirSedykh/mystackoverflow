@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 	# GET /posts
 	def index
 		@posts = Post.all
-		@user_posts = Post.where(user_id: current_user.id)	
+		# @user_posts = Post.where(user_id: current_user.id)	
 	end
 
 	# GET /posts/1
