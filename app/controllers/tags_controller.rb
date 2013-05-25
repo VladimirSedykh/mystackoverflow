@@ -29,7 +29,9 @@ class TagsController < ApplicationController
 	# DELETE /posts/1
 	def destroy
     @tag = Tag.find(params[:id])
-    @tag.destroy
+    if @tag.destroy
+    	redirect_to tags_path
+    end
   end
 
 end

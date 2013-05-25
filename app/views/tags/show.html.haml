@@ -6,27 +6,24 @@
 				|
 	%li 
 		%a 
-			= link_to 'Posts', posts_path
+			= link_to 'Tags', posts_path
 			%span{ :class => "divider"} 
 				|
 	%li			
 		%a 
-			= @post.id 
+			= @tag.id 
 			%span{ :class => "divider"} 				
 
 %h3 
-	= @post.title
+	= @tag.name
 %p
-	= @post.body
+	= @tag.about
 
 .author-q-block
 	.user-action-time
-		%span{ :title => @post.created_at.strftime("%B %d'%y at %H:%M")} 
+		%span{ :title => @tag.created_at.strftime("%B %d'%y at %H:%M")} 
 			asked
-			= @post.created_at.strftime("%B %d'%y at %H:%M")
+			= @tag.created_at.strftime("%B %d'%y at %H:%M")
 		%hr
-		%b
-			Related tags:
-			%p
-				= @post.tags_list
+
 

@@ -3,9 +3,23 @@
 .page-description
 	%p
 		A tag is a keyword or label that categorizes your question with other, similar questions. Using the right tags makes it easier for others to find and answer your question.
+
+%ul{ :class => "breadcrumb" }
+	%li 
+		%a 
+			= link_to 'Main', root_path
+			%span{ :class => "divider"} 
+				|
+	%li 
+		%a 
+			= link_to 'Tags', tags_path
+			%span{ :class => "divider"} 
+				|
+
+
 .tags_list	
 	%table{ :class => "table table-striped table-bordered table-hover" }
 		%tr
 			= render @tags
 
-= link_to 'Create new Tag', new_tag_path, :class => 'btn'	
+= link_to 'Create new Tag', new_tag_path, :class => 'btn btn-primary'	

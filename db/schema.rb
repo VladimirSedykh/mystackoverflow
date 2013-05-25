@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20130523195502) do
     t.integer  "user_id"
     t.string   "title"
     t.text     "body"
+    t.text     "tags_list"
     t.integer  "votes"
     t.integer  "answers"
     t.integer  "view"
@@ -28,10 +29,10 @@ ActiveRecord::Schema.define(:version => 20130523195502) do
   create_table "tags", :force => true do |t|
     t.string   "name"
     t.text     "about"
-    t.text     "related_tags"
-    t.integer  "questions_tagged"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.integer  "asked_count"
+    t.integer  "question_count"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|

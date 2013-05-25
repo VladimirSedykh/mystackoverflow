@@ -1,3 +1,18 @@
+<ul class="breadcrumb">
+	<li>
+		<%= link_to 'Main', root_path %>
+		<span class="divider">|</span>
+	</li>
+	<li>
+		<%= link_to 'Posts', posts_path %>
+		<span class="divider">|</span>
+	</li>
+	<li>
+		<%= link_to 'New', new_post_path %>
+		<span class="divider">|</span>
+	</li>
+</ul>
+
 <div class="new-question-form" id="new-question-form">
 
 <legend>Create new question :</legend>
@@ -12,10 +27,15 @@
 	    <%= f.text_area :body %>
 	  </p>
 	  <p>
+	  	<%= render :template => "tags/_tagname" %>
+	  	<%= f.label :tags_list %><br>
+	  	<input id="post_tags_list" name="post[tags_list]" class="ui-autocomplete-input" autocomplete="off" type="text">
+	  </p>	  
+	  <p>
 	    <%= f.submit %>
 	  </p>
 	<% end %>
 
-	<%= link_to 'Back', '/' %>
+	<%= link_to 'Back', root_path, :class => "btn btn-primary" %>
  
 </div>

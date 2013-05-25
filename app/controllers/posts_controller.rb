@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 	# GET /posts
 	def index
 		@posts = Post.all
+		@user_posts = Post.where(user_id: current_user.id)	
 	end
 
 	# GET /posts/1
@@ -13,6 +14,7 @@ class PostsController < ApplicationController
 	# GET /posts/new
 	def new
 		@post = Post.new
+		@all_tags = Tag.all
 	end
 
 	# POST /posts
