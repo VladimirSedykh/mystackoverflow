@@ -1,3 +1,15 @@
+%ul{ :class => "breadcrumb" }
+	%li 
+		%a 
+			= link_to 'Posts', root_path
+			%span{ :class => "divider"} 
+				|
+	%li			
+		%a 
+			= @post.id 
+			%span{ :class => "divider"} 				
+</ul>
+
 %h3 
 	= @post.title
 %p
@@ -8,3 +20,5 @@
 		%span{ :title => @post.created_at.strftime("%B %d'%y at %H:%M")} 
 			asked
 			= @post.created_at.strftime("%B %d'%y at %H:%M")
+		%hr
+

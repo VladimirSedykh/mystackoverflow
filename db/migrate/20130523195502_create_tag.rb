@@ -3,10 +3,11 @@ class CreateTag < ActiveRecord::Migration
 		create_table :tags do |t|
   		t.string  :name
   		t.text    :about
-  		t.text    :related_tags
-  		t.int     :questions_tagged
+      t.integer :asked_count
+      t.integer :question_count
 
   		t.timestamps   
+  	end
   end
 
   def down

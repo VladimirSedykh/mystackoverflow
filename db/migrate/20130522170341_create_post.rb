@@ -5,6 +5,8 @@ class CreatePost < ActiveRecord::Migration
   		t.string  :title
   		t.text    :body
 
+      t.text    :tags_list
+
   		t.integer :votes
   		t.integer :answers
   		t.integer :view
@@ -17,4 +19,5 @@ class CreatePost < ActiveRecord::Migration
   def down
   	drop_tabble :posts
   end
+  
 end

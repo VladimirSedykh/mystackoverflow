@@ -1,0 +1,11 @@
+%h2 
+	Tags
+.page-description
+	%p
+		A tag is a keyword or label that categorizes your question with other, similar questions. Using the right tags makes it easier for others to find and answer your question.
+.tags_list	
+	%table{ :class => "table table-striped table-bordered table-hover" }
+		%tr
+			= render @tags
+
+= link_to 'Create new Tag', new_tag_path, :class => 'btn'	

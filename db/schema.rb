@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522170341) do
+ActiveRecord::Schema.define(:version => 20130523195502) do
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20130522170341) do
     t.boolean  "is_question"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.text     "about"
+    t.text     "related_tags"
+    t.integer  "questions_tagged"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "users", :force => true do |t|

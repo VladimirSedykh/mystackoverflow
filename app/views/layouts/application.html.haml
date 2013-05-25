@@ -16,7 +16,7 @@
 				.container
 					- if user_signed_in? 
 						%span{ :class => "brand"} 
-							Welcome!
+							= link_to 'Home', root_path 
 							= current_user.email
 						%span{ :class => "brand"}	
 							= current_user.id
@@ -24,8 +24,8 @@
 							= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn'
 					- else 
 						%span
-							= link_to 'Sign in', new_user_session_path, :class => 'btn'	
+							= link_to 'Sign in', new_user_session_path, :class => 'btn'		
 		
 		%section{ :class => "content-section"} 	
-		.container			
-			= yield
+			.container			
+				= yield

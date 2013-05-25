@@ -8,6 +8,8 @@ Stackoverflow::Application.routes.draw do
   # resources :users do
     resources :posts
   # end
+  
+  resources :tags
 
   devise_for :users, :path_names=>{sign_in: 'authorization', sign_up: 'registration'}
 
