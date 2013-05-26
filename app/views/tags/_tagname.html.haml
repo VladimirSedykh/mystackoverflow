@@ -1,6 +1,6 @@
-%p
-	Autocompleate tags data-list: 
-.tags-data-list
-	- @all_tags .each do |t|
-		= t.name
-		|
+%span.tags-data-list
+	Autocompleate tags data-list:
+	%span.tag-data 
+		- @all_tags .each do |t|
+			= t.name
+			|

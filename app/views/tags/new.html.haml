@@ -14,20 +14,22 @@
 			New
 			%span{ :class => "divider"}  
 
-.div{ :class => "new-question-form", :id => "new-question-form" }
-	%legend
-		Create new tag :</legend>
-		= form_for :tag, :url => { :action => :create } do |f|
-			%p
-				= f.label :name
-				%br
-				= f.text_field :name
-			%p
-				= f.label :about
-				%br
-				= f.text_area :about	
-			%p
-				= f.submit
+.subheader
+	%h1
+		Create new tag:
 
-		= link_to 'Back to tag list', tags_path, :class => 'btn btn-primary'		
+.div{ :class => "new-question-form", :id => "new-question-form" }
+	= form_for :tag, :url => { :action => :create } do |f|
+		%p
+			= f.label :name
+			%br
+			= f.text_field :name
+		%p
+			= f.label :about
+			%br
+			= f.text_area :about	
+		%p
+			= f.submit
+
+	= link_to 'Back to tag list', tags_path, :class => 'btn btn-primary'		
 	

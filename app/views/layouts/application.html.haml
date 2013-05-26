@@ -9,12 +9,11 @@
 
 	%body
 
-		.div{ :class => "navbar navbar-inverse navbar-fixed-top"}
-			.div{ :class => "navbar-inner"}
-				.container
+		.div{ :class => "navbar navbar-inverse clearfix"}
+			.div{ :class => "navbar-inner", :id => "custom-header"}
+				.wrapper960
 					- if user_signed_in? 
 						%span{ :class => "brand"} 
-							= link_to 'Home', root_path 
 							= current_user.email
 						%span{ :class => "brand"}	
 							= current_user.id
@@ -23,7 +22,24 @@
 					- else 
 						%span
 							= link_to 'Sign in', new_user_session_path, :class => 'btn'
-							= link_to 'Sign on', new_user_registration_path, :class => 'btn'				
+							= link_to 'Sign on', new_user_registration_path, :class => 'btn'	
+			.wrapper960
+				#header	
+					#hlogo
+						%h1
+							Stackoverflow	
+						= link_to '', root_path							
+					#hmenus	
+						.div{ :class => "nav mainnavs mainnavsanon"}
+							%ul
+								%li
+									= link_to 'Questions', posts_path
+								%li
+									= link_to 'Tags', tags_path
+								%li
+									= link_to 'Tour', '#'
+								%li
+									= link_to 'Users', '#'
 		
 		%section{ :class => "content-section"} 	
 			.container			

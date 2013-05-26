@@ -2,8 +2,20 @@ class PostsController < ApplicationController
 
 	# GET /posts
 	def index
-		@posts = Post.all
-		# @user_posts = Post.where(user_id: current_user.id)	
+
+		if params[:tab] == "all"
+			@posts = Post.all					
+		elsif params[:tab] == "my"			
+			@posts = Post.where(id: current_user.id)
+		elsif params[:tab] == "today"			
+			@posts = Post.find(:all, :conditions => {:created_at => 1.day.ago..Time.now})
+		elsif params[:tab] == "week"			
+			@posts = Post.find(:all, :conditions => {:created_at => 1.week.ago..Time.now})
+		elsif params[:tab] == "month"			
+			@posts = Post.find(:all, :conditions => {:created_at => 1.month.ago..Time.now})
+		else
+			@posts = Post.all				
+		end
 	end
 
 	# GET /posts/1
@@ -26,6 +38,20 @@ class PostsController < ApplicationController
 			render :action => "new"
 		end
 	end
+
+
+	# PUT /posts/1
+  def update
+    @post = Post.find(params[:id])
+    @all_tags = Tag.all
+
+	 	if @post.update_attributes(params[:post])
+	    redirect_to(@post)
+	  else
+	    render "edit"
+	  end
+  end
+
 
 	# DELETE /posts/1
 	def destroy

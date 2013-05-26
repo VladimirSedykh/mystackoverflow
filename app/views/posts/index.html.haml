@@ -1,9 +1,3 @@
-%h2 
-	All Questions
-.page-description
-	%p
-		A tag is a keyword or label that categorizes your question with other, similar questions. Using the right tags makes it easier for others to find and answer your question.
-
 %ul{ :class => "breadcrumb" }
 	%li 
 		%a 
@@ -11,22 +5,22 @@
 			%span{ :class => "divider"} 
 				|
 
-%h3 All questions
-%table{ :class => "table table-striped table-bordered table-hover" }
-	%tr
-		%th
-			author ID
-		%th
-			post ID
-		%th
-			Title
-		%th
-			Body
-		%th
-			Tags
-		%th		
-	= render @posts
+.subheader
+	%h1
+		All Questions
+	#tabs	
+		= link_to 'all questions', posts_path(:tab => "all"), :class => "youarehere", :id => "tab-all"
+		- if user_signed_in? 
+			= link_to 'my questions', posts_path(:tab => "my"), :id => "tab-my"
+		= link_to 'today', posts_path(:tab => "today"), :id => "tab-today"
+		= link_to 'week', posts_path(:tab => "week"), :id => "tab-week"
+		= link_to 'month', posts_path(:tab => "month"), :id => "tab-month"
+
+#questions
+	.question-summary
+		.statscontainer
+		.summary
+			= render @posts		
 
 = link_to 'Create new Question', new_post_path, :class => 'btn btn-primary'	
 = link_to 'Create new Tag', new_tag_path, :class => 'btn btn-primary'	
-

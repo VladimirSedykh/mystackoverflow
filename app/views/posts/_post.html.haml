@@ -1,13 +1,18 @@
-%tr
-	%td
+%h3
+	= link_to post.title, post
+.excerpt
+	= post.body
+.tags
+	= post.tagslist
+.user-info
+	.user-action-time
+		Action time
+	.user-avatar
+		%img{ :src => '/images/asd.jpg'}
+	.user-details
+		User id: 
 		= post.user_id
-	%td 
-		= post.id
-	%td
-		= link_to post.title, post
-	%td 
-		= post.body
-	%td 
-		= post.tagslist
-	%td	
-		= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+.destroy-btn
+	= link_to 'Destroy', post, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' }	
+.edit-btn
+	= link_to 'Edit', edit_post_path(post)		
