@@ -17,11 +17,6 @@
 		= link_to 'month', posts_path(:tab => "month"), :id => "tab-month"
 
 #questions
-	.question-summary
-		.statscontainer
-			= @lol
-		.summary
-			= render @posts		
-
-= link_to 'Create new Question', new_post_path, :class => 'btn btn-primary'	
+	= render @posts		
+	
 = link_to 'Create new Tag', new_tag_path, :class => 'btn btn-primary'	

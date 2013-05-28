@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :tag
-	attr_accessible :title, :body, :user_id, :tagslist
+	attr_accessible :title, :body, :user_id
 
 	# AVAILAVLE_TAB_METHODS = %w(my today week month)
 	# def self.by_tab(method)
@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
 	# end
 
 	scope :my, lambda { |user| where(user_id: user.id) }
-	
+
   def self.today
   	Post.find(:all, :conditions => {:created_at => 1.day.ago..Time.now})
   end
@@ -22,6 +22,5 @@ class Post < ActiveRecord::Base
   def self.month
   	Post.find(:all, :conditions => {:created_at => 1.month.ago..Time.now})
   end
-
 
 end

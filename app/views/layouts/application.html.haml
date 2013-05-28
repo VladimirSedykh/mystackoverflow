@@ -3,6 +3,7 @@
 	%head
 		%title
 			Stackoverflow
+		= favicon_link_tag 'favicon.ico'
 		= javascript_include_tag "application"
 		= stylesheet_link_tag "application", :media => "all"
 		= csrf_meta_tags
@@ -40,7 +41,11 @@
 									= link_to 'Tour', '#'
 								%li
 									= link_to 'Users', '#'
+						.div{ :class => "nav askquestion"}		
+							%ul
+								%li	
+									= link_to 'Ask Question', new_post_path, :id => 'nav-askquestion'
 		
 		%section{ :class => "content-section"} 	
-			.container			
+			.wrapper960		
 				= yield

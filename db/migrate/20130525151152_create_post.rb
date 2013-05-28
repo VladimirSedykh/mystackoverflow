@@ -5,8 +5,6 @@ class CreatePost < ActiveRecord::Migration
   		t.string  :title
   		t.text    :body
 
-      t.text    :tagslist
-
   		t.integer :answers
   		t.integer :view
 

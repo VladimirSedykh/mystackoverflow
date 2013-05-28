@@ -32,6 +32,8 @@ group :production do
 end
 
 
+gem 'impressionist'
+
 
 
 # To use ActiveModel has_secure_password
