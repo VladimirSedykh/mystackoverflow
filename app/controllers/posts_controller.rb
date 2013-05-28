@@ -6,16 +6,18 @@ class PostsController < ApplicationController
 		if params[:tab] == "all"
 			@posts = Post.all					
 		elsif params[:tab] == "my"			
-			@posts = Post.where(id: current_user.id)
-		elsif params[:tab] == "today"			
-			@posts = Post.find(:all, :conditions => {:created_at => 1.day.ago..Time.now})
+			@posts = Post.my(current_user)
+		elsif params[:tab] == "today"		
+			@posts = Post.today
 		elsif params[:tab] == "week"			
-			@posts = Post.find(:all, :conditions => {:created_at => 1.week.ago..Time.now})
+			@posts = Post.week
 		elsif params[:tab] == "month"			
-			@posts = Post.find(:all, :conditions => {:created_at => 1.month.ago..Time.now})
+			@posts = Post.month
 		else
 			@posts = Post.all				
 		end
+
+		# @posts = Post.by_tab(params[:tab]).by_user(user)
 	end
 
 	# GET /posts/1
