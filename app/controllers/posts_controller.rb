@@ -23,6 +23,10 @@ class PostsController < ApplicationController
 	# GET /posts/1
   def show
     @post = Post.find(params[:id])
+
+    @post.update_attributes!(
+   		:view => Post.counter(params[:id])
+		)
   end
 
 	# GET /posts/new
@@ -43,17 +47,19 @@ class PostsController < ApplicationController
 
 
 	# PUT /posts/1
-  def update
-    @post = Post.find(params[:id])
-    @all_tags = Tag.all
+  def edit
+  	@post = Post.find(params[:id])
+	end
 
-	 	if @post.update_attributes(params[:post])
-	    redirect_to(@post)
+	def update
+	  @post = Post.find(params[:id])
+	 
+	  if @post.update_attributes(params[:post])
+	    redirect_to :action => :show, :id => @post.id
 	  else
-	    render "edit"
+	    render 'edit'
 	  end
-  end
-
+	end
 
 	# DELETE /posts/1
 	def destroy

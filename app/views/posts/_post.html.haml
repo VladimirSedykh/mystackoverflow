@@ -11,11 +11,11 @@
 			.div answers
 		.views
 			.mini-counts
-				67
+				= post.view
 			.div views
 	.summary
 		%h3
-			= link_to post.title, post
+			= link_to post.title, post			
 		.excerpt
 			= post.body
 		.user-info

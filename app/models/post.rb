@@ -1,7 +1,9 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
-	belongs_to :tag
-	attr_accessible :title, :body, :user_id
+	attr_accessible :title, :body, :user_id, :tagslist, :view
+
+	validates :title, :presence => true,
+                    :length => { :minimum => 5 }
 
 	# AVAILAVLE_TAB_METHODS = %w(my today week month)
 	# def self.by_tab(method)
@@ -21,6 +23,12 @@ class Post < ActiveRecord::Base
 
   def self.month
   	Post.find(:all, :conditions => {:created_at => 1.month.ago..Time.now})
+  end
+
+  def self.counter(id)
+    p = Post.find(id)
+
+    p.view + 1
   end
 
 end

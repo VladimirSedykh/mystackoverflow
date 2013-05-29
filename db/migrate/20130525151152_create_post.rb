@@ -6,7 +6,7 @@ class CreatePost < ActiveRecord::Migration
   		t.text    :body
 
   		t.integer :answers
-  		t.integer :view
+  		t.integer :view, :default => 0
 
   		t.boolean :is_question
   		t.timestamps   		
