@@ -1,0 +1,23 @@
+%ul{ :class => "breadcrumb" }
+	%li 
+		%a 
+			= link_to 'Main', root_path
+			%span{ :class => "divider"} 
+				|
+
+.subheader
+	%h1
+		All Questions
+	#tabs	
+		= link_to 'all questions', questions_path(:tab => "all"), :class => "youarehere", :id => "tab-all"
+		- if user_signed_in? 
+			= link_to 'my questions', questions_path(:tab => "my"), :id => "tab-my"
+		= link_to 'frequent', questions_path(:tab => "fre"), :id => "tab-fre"
+		= link_to 'today', questions_path(:tab => "today"), :id => "tab-today"
+		= link_to 'week', questions_path(:tab => "week"), :id => "tab-week"
+		= link_to 'month', questions_path(:tab => "month"), :id => "tab-month"
+
+#questions
+	= render @questions		
+	
+= link_to 'Create new Tag', new_tag_path

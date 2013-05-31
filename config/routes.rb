@@ -1,12 +1,14 @@
 Stackoverflow::Application.routes.draw do
   # auto redirect 
-  root :to => 'posts#index'
+  root :to => 'questions#index'
 
 
   # devise_for :users, :path => 'sessions'
 
   # resources :users do
-    resources :posts
+    resources :questions do 
+      resources :answers, :only => [ :create, :update, :destroy ]
+    end  
   # end
   
   resources :tags

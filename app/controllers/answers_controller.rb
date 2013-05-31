@@ -4,15 +4,16 @@ class AnswersController < ApplicationController
 		Answer.all
 	end
 
-	def new
-		@answer = Answer.new
-	end
 
 	def create
-		@answer = Answer.new(params[:answer])
+		@question = Question.find(params[:question_id])
+		@answer = @question.answers.build(params[:answer])
+
 		if @answer.save
-			redirect_to root_path
+			redirect_to question_path(@question)
 		else
-			render :action => "new"
+			#render :action => "show", :controller => "questions"
+			render :template => "questions/show"
 		end
 	end
+end

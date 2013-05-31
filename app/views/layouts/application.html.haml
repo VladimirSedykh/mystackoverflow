@@ -34,7 +34,7 @@
 						.div{ :class => "nav mainnavs mainnavsanon"}
 							%ul
 								%li
-									= link_to 'Questions', posts_path
+									= link_to 'Questions', questions_path
 								%li
 									= link_to 'Tags', tags_path
 								%li
@@ -44,7 +44,7 @@
 						.div{ :class => "nav askquestion"}		
 							%ul
 								%li	
-									= link_to 'Ask Question', new_post_path, :id => 'nav-askquestion'
+									= link_to 'Ask Question', new_question_path, :id => 'nav-askquestion'
 		
 		%section{ :class => "content-section"} 	
 			.wrapper960		

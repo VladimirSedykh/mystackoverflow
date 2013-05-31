@@ -25,7 +25,7 @@ gem 'jquery-rails'
 gem 'devise'
 
 gem 'haml'
-
+gem 'pry'
 group :production do
 	gem 'pg'
 	#gem 'activerecord-postgresql-adapter'

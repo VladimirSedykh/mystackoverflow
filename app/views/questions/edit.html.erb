@@ -1,0 +1,22 @@
+<ul class="breadcrumb">
+	<li>
+		<%= link_to 'Main', root_path %>
+		<span class="divider">|</span>
+	</li>
+	<li>
+		<%= link_to 'questions', questions_path %>
+		<span class="divider">|</span>
+	</li>
+	<li>
+		<%= link_to 'New', new_question_path %>
+		<span class="divider">|</span>
+	</li>
+</ul>
+
+<div class="new-question-form" id="new-question-form">
+
+<legend>Edit question :</legend>
+
+	<%= link_to 'Back', root_path, :class => "btn btn-primary" %>
+ 
+</div>

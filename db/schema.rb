@@ -11,15 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530192519) do
-
-  create_table "answers", :force => true do |t|
-    t.integer  "post_id"
-    t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130528202304) do
 
   create_table "impressions", :force => true do |t|
     t.string   "impressionable_type"
@@ -48,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130530192519) do
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
+    t.integer  "question_id"
     t.string   "title"
     t.text     "body"
     t.integer  "answers"

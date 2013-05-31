@@ -1,0 +1,11 @@
+= form_for post, :url => url do |f|
+	%p
+		= f.label :title
+		%br
+		= f.text_field :title 
+	%p
+		= f.label :body
+		%br
+		= f.text_field :body 
+	%p
+		= f.submit 

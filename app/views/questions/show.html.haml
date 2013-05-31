@@ -1,0 +1,28 @@
+%ul{ :class => "breadcrumb" }
+	%li 
+		%a 
+			= link_to 'Main', root_path
+			%span{ :class => "divider"} 
+				|
+	%li 
+		%a 
+			= link_to 'questions', questions_path
+			%span{ :class => "divider"} 
+				|
+	%li			
+		%a 
+			= @question.id 
+			%span{ :class => "divider"} 				
+
+= render :partial => "posts/post", :locals => { :post => @question }
+
+.author-q-block
+	.user-action-time
+		%span{ :title => @question.created_at.strftime("%B %d'%y at %H:%M")} 
+			asked
+			= @question.created_at.strftime("%B %d'%y at %H:%M")
+= render :partial => "posts/form", :locals => { :post => @answer, :url => question_answers_path(@question)}
+
+// Viberem vse anseveri konkretnogo questiona.
+- @question.answers.each do |answer|
+	= render :partial => "posts/post", :locals => { :post => answer }

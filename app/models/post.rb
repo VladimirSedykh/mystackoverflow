@@ -1,8 +1,8 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
-  has_many :answers
-	attr_accessible :title, :body, :user_id, :tagslist, :view
+	attr_accessible :title, :body, :user_id, :view, :is_question
 
+  #validates :is_question, :presence => true
 	validates :title, :presence => true,
                     :length => { :minimum => 5 }
 
