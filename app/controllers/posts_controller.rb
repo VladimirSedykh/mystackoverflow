@@ -13,6 +13,8 @@ class PostsController < ApplicationController
 			@posts = Post.week
 		elsif params[:tab] == "month"			
 			@posts = Post.month
+		elsif params[:tab] == "fre"			
+			@posts = Post.frequent
 		else
 			@posts = Post.all				
 		end
@@ -23,6 +25,7 @@ class PostsController < ApplicationController
 	# GET /posts/1
   def show
     @post = Post.find(params[:id])
+    @answer = Answer.new
 
     @post.update_attributes!(
    		:view => Post.counter(params[:id])

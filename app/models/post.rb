@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
+  has_many :answers
 	attr_accessible :title, :body, :user_id, :tagslist, :view
 
 	validates :title, :presence => true,
@@ -25,9 +26,12 @@ class Post < ActiveRecord::Base
   	Post.find(:all, :conditions => {:created_at => 1.month.ago..Time.now})
   end
 
+  def self.frequent
+    Post.find(:all, :order => "view desc", :limit => 10)  
+  end
+
   def self.counter(id)
     p = Post.find(id)
-
     p.view + 1
   end
 

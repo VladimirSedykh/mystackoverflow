@@ -11,6 +11,7 @@ Stackoverflow::Application.routes.draw do
   
   resources :tags
 
+
   devise_for :users, :path_names=>{sign_in: 'authorization', sign_up: 'registration'}
 
   # The priority is based upon order of creation:

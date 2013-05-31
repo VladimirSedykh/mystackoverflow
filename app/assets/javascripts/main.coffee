@@ -54,7 +54,7 @@ $ ->
 
 
 	tab_val = getParameterByName('tab')
-	tab_data = [ "all", 'my', 'today', 'week', 'month']
+	tab_data = [ "all", 'my', 'today', 'week', 'month', 'fre']
 
 	$.each tab_data, (i, v) ->
 		if tab_val == v

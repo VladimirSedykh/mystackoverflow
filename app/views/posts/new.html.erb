@@ -17,7 +17,7 @@
 
 <legend>Create new question :</legend>
 
-	<%= form_for :post, :url => { :action => :create } do |f| %>
+	<%= form_for(@post) do |f| %>
 
 	  <% if @post.errors.any? %>
 	    <div id="error_explanation">

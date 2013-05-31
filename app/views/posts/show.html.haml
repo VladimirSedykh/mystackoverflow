@@ -15,10 +15,15 @@
 			%span{ :class => "divider"} 				
 
 
-.subheader
+#question-header
 	%h1
 		= @post.title	
-%p
+.vote
+	%a.vote-up-off
+	%span.vote-count-post 
+		0
+	%a.vote-down-off		
+.post-text
 	= @post.body
 
 .author-q-block
@@ -26,4 +31,6 @@
 		%span{ :title => @post.created_at.strftime("%B %d'%y at %H:%M")} 
 			asked
 			= @post.created_at.strftime("%B %d'%y at %H:%M")
+
+= render 'answer_form'
 

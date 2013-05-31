@@ -18,6 +18,14 @@ a
 	text-decoration: none
 	cursor: pointer
 
+h1
+	font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif
+	font-weight: bold
+	font-size: 170%
+	margin-bottom: 7px
+	line-height: 1.3
+
+
 h3 
 	font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif
 	font-size: 130%
@@ -79,6 +87,39 @@ h3
 /* Content section. */
 .content-section 
 	margin: 0
+	#question-header 
+		font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif
+		width: 960px
+		margin-bottom: 20px
+		border-bottom: 1px solid #cccccc
+	.vote
+		text-align: center
+		width: 60px
+		vertical-align: top
+		float : left
+		.vote-up-off
+			cursor: pointer
+			background-position: 0px -265px
+			display: block
+			margin: 0 auto
+			width: 41px
+			height: 25px
+			background-image : image-url('sprites.png')
+		.vote-count-post
+			padding-top: 2px
+			color: #555
+			display: block
+			font-size: 24px
+		.vote-down-off
+			@extend .vote-up-off
+			background-position: 0px -300px
+	.post-text
+		width: 660px
+		font-size: 107%
+		margin-bottom: 5px
+		margin-right: 5px
+		line-height: 130%		
+
 	.subheader 
 		border-bottom: 1px solid #cccccc
 		height: 34px
