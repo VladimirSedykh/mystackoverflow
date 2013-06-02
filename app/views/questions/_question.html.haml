@@ -1,4 +1,4 @@
-.question-summary
+.div{:id => "question_#{question.id}", :class => 'question-summary'}
 	.statscontainer
 		.statsarrow
 		.votes
@@ -21,12 +21,14 @@
 		.user-info
 			.user-action-time
 				Action time
-			.user-avatar
-				%img{ :src => '/images/asd.jpg'}
 			.user-details
 				User id: 
 				= question.user_id
 			.destroy-btn
+				= link_to "DESTR!",  question, :confirm => "Sure?", :method => "delete", :remote => true, :class => 'delete_post'
+
+
+
 				= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }	
 			.edit-btn
 				= link_to 'Edit', edit_question_path(question)		

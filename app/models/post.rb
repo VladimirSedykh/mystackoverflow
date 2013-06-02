@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
 
   #validates :is_question, :presence => true
 	validates :title, :presence => true,
-                    :length => { :minimum => 5 }
+                    :length => { :minimum => 3 }
 
 	# AVAILAVLE_TAB_METHODS = %w(my today week month)
 	# def self.by_tab(method)

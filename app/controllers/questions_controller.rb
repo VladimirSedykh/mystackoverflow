@@ -72,9 +72,7 @@ class QuestionsController < ApplicationController
 	# DELETE /questions/1
 	def destroy
     @question = Question.find(params[:id])
-    if @question.destroy
-    	redirect_to root_path
-    end
+    @question.destroy
   end
 
 end
