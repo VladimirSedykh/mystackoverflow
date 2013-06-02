@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130528202304) do
     t.integer  "question_id"
     t.string   "title"
     t.text     "body"
+    t.integer  "votes"
     t.integer  "answers"
     t.integer  "view",        :default => 0
     t.boolean  "is_question"

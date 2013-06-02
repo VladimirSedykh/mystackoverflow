@@ -27,6 +27,11 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answer = Answer.new
 
+    # get answers number of qestion :id.
+    @answ_num = @question.answers.all.count
+
+ #   binding.pry
+
     @question.update_attributes!(
    		:view => Question.counter(params[:id])
 		)

@@ -6,6 +6,7 @@ class CreatePost < ActiveRecord::Migration
   		t.string  :title
   		t.text    :body
 
+      t.integer :votes
   		t.integer :answers
   		t.integer :view, :default => 0
 

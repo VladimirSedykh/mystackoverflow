@@ -59,3 +59,14 @@ $ ->
 	$.each tab_data, (i, v) ->
 		if tab_val == v
 			_addTabClass(v)
+
+$ ->
+	# Ajax for post votes.
+	$.ajax
+	  type: "POST"
+	  url: "http://localhost:3000/questions/1"
+	  data    : { posts : { votes : '100' } },
+	  success: (data) ->
+	    alert data + " DATA HERE" 
+	  	
+            
