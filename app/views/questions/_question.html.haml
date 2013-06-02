@@ -25,10 +25,6 @@
 				User id: 
 				= question.user_id
 			.destroy-btn
-				= link_to "DESTR!",  question, :confirm => "Sure?", :method => "delete", :remote => true, :class => 'delete_post'
-
-
-
-				= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }	
+				= link_to "Destroy",  question, :confirm => "Sure?", :method => "delete", :remote => true, :class => 'delete_post'	
 			.edit-btn
 				= link_to 'Edit', edit_question_path(question)		

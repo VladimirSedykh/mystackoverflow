@@ -3,9 +3,7 @@ class QuestionsController < ApplicationController
 	# GET /questions
 	def index
 
-		@questions = if params[:tab] == "all"
-			Question.all					
-		elsif params[:tab] == "my"			
+		@questions = if params[:tab] == "my"			
 			Question.my(current_user)
 		elsif params[:tab] == "today"		
 			Question.today
@@ -15,10 +13,13 @@ class QuestionsController < ApplicationController
 			Question.month
 		elsif params[:tab] == "fre"			
 			Question.frequent
+		elsif params[:search_q] == "result"			
+			Question.serach_q
 		else
-			Question.all				
+			Question
 		end
 
+		@questions = @questions.paginate(:page => params[:page], :per_page => 5)
 		# @questions = question.by_tab(params[:tab]).by_user(user)
 	end
 
@@ -53,7 +54,6 @@ class QuestionsController < ApplicationController
 		end
 	end
 
-
 	# PUT /questions/1
   def edit
   	@question = Question.find(params[:id])
@@ -67,6 +67,16 @@ class QuestionsController < ApplicationController
 	  else
 	    render 'edit'
 	  end
+	end
+
+	def search
+		if params[:details] == 'week'
+			@questions = Question.search_q(params[:q]).today	
+		elsif params[:details] == 'users_q'	
+			@questions = Question.search_q(params[:q]).my(current_user)
+		else
+			@questions = Question.search_q(params[:q])		
+		end
 	end
 
 	# DELETE /questions/1

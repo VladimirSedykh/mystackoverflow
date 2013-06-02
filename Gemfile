@@ -31,8 +31,7 @@ group :production do
 	#gem 'activerecord-postgresql-adapter'
 end
 
-
-gem 'impressionist'
+gem 'will_paginate', '3.0.4'
 
 
 

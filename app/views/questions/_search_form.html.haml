@@ -1,0 +1,10 @@
+= form_tag("/search", :method => "get") do 
+	= label_tag(:q, "Search for question title:") 
+	= text_field_tag(:q) 
+	%label.checkbox
+		= radio_button_tag(:details, "week")
+		Created last week
+	%label.checkbox
+		= radio_button_tag(:details, "users_q")	
+		Find in my questions	
+	= submit_tag("Search") 

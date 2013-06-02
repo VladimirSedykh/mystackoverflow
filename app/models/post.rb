@@ -13,13 +13,12 @@ class Post < ActiveRecord::Base
 	# end
 
 	scope :my, lambda { |user| where(user_id: user.id) }
-  scope :today, lambda { where(created_at: 1.day.ago..Time.now) }
-  scope :week, lambda { where(created_at: 1.week.ago..Time.now) }
-  scope :month, lambda { where(created_at: 1.month.ago..Time.now) }
+  scope :today, where(created_at: 1.day.ago..Time.now) 
+  scope :week, where(created_at: 1.week.ago..Time.now) 
+  scope :month, where(created_at: 1.month.ago..Time.now) 
+  scope :frequent, order( "view desc").limit(10) 
 
-  def self.frequent
-    Post.find(:all, :order => "view desc", :limit => 10)  
-  end
+  scope :search_q, lambda { |q| where(title: q) }
 
   def self.counter(id)
     p = Post.find(id)

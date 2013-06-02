@@ -5,6 +5,9 @@
 			%span{ :class => "divider"} 
 				|
 
+.search-question
+	= render 'questions/search_form'
+
 .subheader
 	%h1
 		All Questions
@@ -18,6 +21,7 @@
 		= link_to 'month', questions_path(:tab => "month"), :id => "tab-month"
 
 #questions
-	= render @questions		
+	= render @questions
+= will_paginate @questions		
 	
 = link_to 'Create new Tag', new_tag_path
