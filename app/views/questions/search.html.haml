@@ -17,10 +17,10 @@
 .subheader
 	%h1
 		Seach results..	
-- if @questions.empty?	
+- if @search.empty?	
 	.div{ :class => "div question-summary"}
 		No Questions with Title like : 
 		%strong
 			= params[:q]
 - else
-	= render @questions
+	= render @search

@@ -71,12 +71,18 @@ class QuestionsController < ApplicationController
 
 	def search
 		if params[:details] == 'week'
-			@questions = Question.search_q(params[:q]).today	
+			@search = Question.search_q(params[:q]).today	
 		elsif params[:details] == 'users_q'	
-			@questions = Question.search_q(params[:q]).my(current_user)
+			@search = Question.search_q(params[:q]).my(current_user)
 		else
-			@questions = Question.search_q(params[:q])		
+			@search = Question.search_q(params[:q])		
 		end
+
+		respond_to do |format|
+			format.html
+      format.js { render :json => @search}
+    end
+
 	end
 
 	# DELETE /questions/1
