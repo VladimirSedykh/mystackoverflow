@@ -18,6 +18,10 @@ a
 	text-decoration: none
 	cursor: pointer
 
+p 
+	font-size : 14px	
+	color : black
+
 h1
 	font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif
 	font-weight: bold
@@ -87,38 +91,49 @@ h3
 /* Content section. */
 .content-section 
 	margin: 0
-	#question-header 
-		font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif
-		width: 960px
-		margin-bottom: 20px
-		border-bottom: 1px solid #cccccc
-	.vote
-		text-align: center
-		width: 60px
-		vertical-align: top
-		float : left
-		.vote-up-off
-			cursor: pointer
-			background-position: 0px -265px
-			display: block
-			margin: 0 auto
-			width: 41px
-			height: 25px
-			background-image : image-url('sprites.png')
-		.vote-count-post
-			padding-top: 2px
-			color: #555
-			display: block
-			font-size: 24px
-		.vote-down-off
-			@extend .vote-up-off
-			background-position: 0px -300px
-	.post-text
-		width: 660px
-		font-size: 107%
-		margin-bottom: 5px
-		margin-right: 5px
-		line-height: 130%		
+	#question
+		#question-header 
+			font-family: Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif
+			margin-bottom: 20px
+			border-bottom: 1px solid #cccccc
+		.vote
+			text-align: center
+			width: 60px
+			vertical-align: top
+			float : left
+			.vote-up-off
+				cursor: pointer
+				background-position: 0px -265px
+				display: block
+				margin: 0 auto
+				width: 41px
+				height: 25px
+				background-image : image-url('sprites.png')
+			.vote-count-post
+				padding-top: 2px
+				color: #555
+				display: block
+				font-size: 24px
+			.vote-down-off
+				@extend .vote-up-off
+				background-position: 0px -300px
+		.question-text
+			float : left
+			width : 840px		
+		.author-q-block
+			background : #e0eaf1
+			width : 180px
+			height : 40px	
+			float : right
+			padding : 10px	
+		.post-text
+			width: 660px
+			font-size: 107%
+			margin-bottom: 5px
+			margin-right: 5px
+			line-height: 130%		
+	.ask_question
+		padding : 0 0 0 57px 
 
 	.subheader 
 		border-bottom: 1px solid #cccccc
@@ -227,6 +242,46 @@ textarea
 	height : 150px
 	resize : vertical
 
-#search_res
-	opacity : 0
-	min-height : 100px
+.search-question
+	position : relative
+	#search_form
+		background : none
+		padding : 0
+		display: inline-block
+		label 
+			float: left
+			margin: 4px 10px 0 0
+		input
+			float : left	
+			width : 300px
+		.clear_btn
+			width: 30px
+			height: 30px
+			text-align: center
+			display: inline-block
+			line-height: 30px
+			font-size: 20px
+			text-decoration : none
+			color : gray
+			background : #C8C8C8 
+			position: relative
+			left: -3px
+			&:hover
+				background : #E8E8E8
+	#search_res
+		position: absolute
+		background : white
+		left: 164px
+		top: 30px
+		width: 312px
+		border: 1px solid #C8C8C8 
+		border-top: none
+		display : none
+		box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.19)
+		-moz-box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.19)
+		-webkit-box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.19)
+		a	
+			padding: 5px 0 5px 10px
+			display : block
+			&:hover
+				background : #E8E8E8 

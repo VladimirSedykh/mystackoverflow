@@ -12,17 +12,21 @@
 	%li			
 		%a 
 			= @question.id 
-			%span{ :class => "divider"} 				
+			%span{ :class => "divider"} 
 
+.search-question
+	= render 'questions/search_form'
+								
 = render :partial => "posts/post", :locals => { :post => @question }
 
-.author-q-block
-	.user-action-time
-		%span{ :title => @question.created_at.strftime("%B %d'%y at %H:%M")} 
-			asked
-			= @question.created_at.strftime("%B %d'%y at %H:%M")
-= render :partial => "posts/form", :locals => { :post => @answer, :url => question_answers_path(@question)}
+.ask_question
+	%h1 
+		= @question.answers.count
+		Answers
+		%hr
+	// Viberem vse anseveri konkretnogo questiona.
+	- @question.answers.each do |answer|
+		= render :partial => "posts/post", :locals => { :post => answer }
 
-// Viberem vse anseveri konkretnogo questiona.
-- @question.answers.each do |answer|
-	= render :partial => "posts/post", :locals => { :post => answer }
+	%h1 Your question
+	= render :partial => "posts/form", :locals => { :post => @answer, :url => question_answers_path(@question)}

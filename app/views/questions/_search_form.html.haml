@@ -1,13 +1,5 @@
 = form_tag "/search", :method => "get", :id => 'search_form', :remote => true do 
 	= label_tag(:q, "Search for question title:") 
-	= text_field_tag(:q) 
-	%label.checkbox
-		= radio_button_tag(:details, "week")
-		Created last week
-	%label.checkbox
-		= radio_button_tag(:details, "users_q")	
-		Find in my questions	
-	= submit_tag "Search"
-	= link_to "Seach",  '/search', :confirm => "Sure?", :method => "update", :remote => true, :class => 'search_posts'	
-.div{ :id=>'search_res', :class=>'accordion'}
-%hr
+	= text_field_tag :q, nil, :autocomplete => 'off'
+	= link_to 'X', '#', :class => 'clear_btn', :title => 'Clear'
+	#search_res

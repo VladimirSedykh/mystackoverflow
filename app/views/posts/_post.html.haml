@@ -1,10 +1,17 @@
-#question-header
-	%h1
-		= post.title	
-.vote
-	%a.vote-up-off
-	%span.vote-count-question 
-		0
-	%a.vote-down-off		
-.question-text
-	= post.body
+.div{ :id =>"question", :class => "clearfix" }
+	#question-header
+		%h1
+			= post.title	
+	.vote
+		%a.vote-up-off
+		%span.vote-count-question 
+			0
+		%a.vote-down-off		
+	.question-text
+		%p
+			= post.body
+	.author-q-block
+		.user-action-time
+			%span{ :title => post.created_at.strftime("%B %d'%y at %H:%M")} 
+				asked
+				= post.created_at.strftime("%B %d'%y at %H:%M")

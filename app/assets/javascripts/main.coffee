@@ -46,7 +46,6 @@ $ ->
 	      false
 
 $ ->
-
 	# Tabs active class.
 	_addTabClass = (v) ->
 		tabs = $('#tabs a').removeClass('youarehere')
@@ -60,10 +59,14 @@ $ ->
 		if tab_val == v
 			_addTabClass(v)
 
-$ ->		
-	$('#search_form').submit ->
-		$('#search_res').css('opacity', 0)
-		url = $(this).serialize() 
+$ ->	
+	# Search form mactions.
+	form = $('#search_form')
+	box = $('#search_res')	
+	input = $('#q')
+
+	input.keyup ->
+		url = form.trigger("submit").serialize() 		
 		$.ajax
  			type: "GET"
  			dataType: "json"
@@ -73,22 +76,17 @@ $ ->
  				output = ''			
  				$.each(data, -> 
  					el = $(this)[0]					
- 					output += '<div class="accordion-group">' +
- 										'<div class="accordion-heading">'	+
- 										'<a class="accordion-toggle" data-toggle="collapse" data-parent="#search_res" href="#collapse' + el.id + '">' +
-                    el.title + 
-                    '</a></div>' +
-                    '<div id="collapse' + el.id + '" class="accordion-body collapse">' + 
-                    '<div class="accordion-inner">' +
-                    'Created by user id: ' + el.user_id + '<br>' + 
-                    'Qustion id: ' + el.id + '<br>' + 					 					
- 					 					'Viewed: ' + el.view + ' times<br>' +
- 					 					'Answers: ' + el.answers.length + '<br>' +
- 					 					el.body + 
-										'</div></div></div>'	
- 				)
- 				$('#search_res').animate({
- 					opacity: 1
- 				}, 1000).html(output)
+ 					output += '<a href="/questions/' + el.id + '"">' + el.title + '</a>'	
+ 				)				
+ 				box.html(output).show()
 
- 					 
+ 	form.mouseleave ->
+ 			box.slideUp() if $('#search_res').html() 
+ 	form.mouseenter ->
+ 		box.slideDown() if $('#search_res').html() 
+
+ 	$('.clear_btn').click ->
+ 		box.html('')
+ 		input.val('')
+ 		false		
+

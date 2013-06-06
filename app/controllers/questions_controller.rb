@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
 			Question
 		end
 
-		@questions = @questions.paginate(:page => params[:page], :per_page => 5)
+		@questions = @questions.paginate(:page => params[:page], :per_page => 4)
 		# @questions = question.by_tab(params[:tab]).by_user(user)
 	end
 
@@ -55,7 +55,7 @@ class QuestionsController < ApplicationController
 	end
 
 	# PUT /questions/1
-  def edit
+  def edit  	
   	@question = Question.find(params[:id])
 	end
 
