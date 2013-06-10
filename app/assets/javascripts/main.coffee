@@ -82,7 +82,7 @@ $ ->
 
  	form.mouseleave ->
  			box.slideUp() if $('#search_res').html() 
- 	form.mouseenter ->
+ 	input.click ->
  		box.slideDown() if $('#search_res').html() 
 
  	$('.clear_btn').click ->
