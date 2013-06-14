@@ -66,11 +66,11 @@ $ ->
 	input = $('#q')
 
 	input.keyup ->
-		url = form.trigger("submit").serialize() 		
+		url = form.serialize() 		
 		$.ajax
  			type: "GET"
  			dataType: "json"
- 			url: '/search?' + url
+ 			url: '/questions/search?' + url
  			dataType: 'json'
  			success: (data) ->	
  				output = ''			
@@ -88,5 +88,4 @@ $ ->
  	$('.clear_btn').click ->
  		box.html('')
  		input.val('')
- 		false		
-
+ 		false

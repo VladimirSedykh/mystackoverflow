@@ -1,4 +1,4 @@
-= form_tag "/search", :method => "get", :id => 'search_form', :remote => true do 
+= form_tag search_questions_path, :method => "get", :id => 'search_form', :remote => true do 
 	= label_tag(:q, "Search for question title:") 
 	= text_field_tag :q, nil, :autocomplete => 'off'
 	= link_to 'X', '#', :class => 'clear_btn', :title => 'Clear'

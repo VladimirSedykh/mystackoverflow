@@ -1,7 +1,7 @@
 class CreateTaglist < ActiveRecord::Migration
   def up
-  	create_table :taglist do |t|
-  		t.integer :post_id
+  	create_table :question_tags do |t|
+  		t.integer :question_id
   		t.integer :tag_id
 
   		t.timestamps   		
@@ -9,6 +9,6 @@ class CreateTaglist < ActiveRecord::Migration
   end
 
   def down
-  	drop_tabble :taglist
+  	drop_table :question_tags
   end
 end

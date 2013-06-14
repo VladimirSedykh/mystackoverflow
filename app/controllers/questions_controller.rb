@@ -46,9 +46,16 @@ class QuestionsController < ApplicationController
 
 	# question /questions
 	def create
-		@question = current_user.questions.build(params[:question])
+		@question = current_user.questions.build(params[:question])	
+
 		if @question.save
+
+			Tag.find_all_by_id(params[:tags]).each do |tag|
+				# QuestionTag.create(:question => @question, :tag => tag)
+				@question.question_tags.create(:tag => tag)
+			end	
 			redirect_to root_path
+
 		else
 			render :action => "new"
 		end
@@ -70,14 +77,7 @@ class QuestionsController < ApplicationController
 	end
 
 	def search
-		if params[:details] == 'week'
-			@search = Question.search_q(params[:q]).today	
-		elsif params[:details] == 'users_q'	
-			@search = Question.search_q(params[:q]).my(current_user)
-		else
-			@search = Question.search_q(params[:q])		
-		end
-
+		@search = Question.by_content(params[:q])
 		respond_to do |format|
 			format.html
       format.js { render :json => @search}

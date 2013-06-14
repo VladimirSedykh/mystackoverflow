@@ -7,13 +7,14 @@ Stackoverflow::Application.routes.draw do
 
   # resources :users do
     resources :questions do 
+      collection do
+        get 'search'
+      end
       resources :answers, :only => [ :create, :update, :destroy ]
     end  
   # end
   
   resources :tags
-
-  match "/search" => "questions#search"
 
   devise_for :users, :path_names=>{sign_in: 'authorization', sign_up: 'registration'}
 

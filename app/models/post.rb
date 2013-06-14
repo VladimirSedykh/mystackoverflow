@@ -19,8 +19,7 @@ class Post < ActiveRecord::Base
   scope :frequent, order( "view desc").limit(10) 
 
   # scope :search_q, lambda { |q| where(title: q) }
-  # scope :search_q, lambda { |q| where(title.matches(q) | body.matches("%#{q}%")) }
-  scope :search_q, lambda { |q| where("title LIKE ? OR body LIKE ?", "%#{q}%", "%#{q}%") }
+  scope :by_content, lambda { |q| where("title LIKE ? OR body LIKE ?", "%#{q}%", "%#{q}%") }
 
   def self.counter(id)
     p = Post.find(id)

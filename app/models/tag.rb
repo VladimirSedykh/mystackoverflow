@@ -1,4 +1,7 @@
 class Tag < ActiveRecord::Base
 	has_many :posts
+	has_many :question_tags
+	has_many :questions, :through => :question_tags
+
 	attr_accessible :name, :about, :related_tags, :questions_tagged 
 end
