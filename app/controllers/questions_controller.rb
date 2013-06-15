@@ -28,10 +28,10 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answer = Answer.new
 
+    @question_tags = @question.question_tags
+
     # get answers number of qestion :id.
     @answ_num = @question.answers.all.count
-
- #   binding.pry
 
     @question.update_attributes!(
    		:view => Question.counter(params[:id])
@@ -65,12 +65,21 @@ class QuestionsController < ApplicationController
 	# PUT /questions/1
   def edit  	
   	@question = Question.find(params[:id])
+
+   @question_tags = @question.question_tags
+
 	end
 
 	def update
 	  @question = Question.find(params[:id])
-	 
+
 	  if @question.update_attributes(params[:question])
+
+			Tag.find_all_by_id(params[:tags]).each do |tag|
+			   # QuestionTag.create(:question => @question, :tag => tag)
+			   @question.question_tags.create(:tag => tag)
+			end
+
 	    redirect_to :action => :show, :id => @question.id
 	  else
 	    render 'edit'

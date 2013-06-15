@@ -1,4 +1,9 @@
 = form_for post, :url => url do |f|
+
+	- if params[:action] == 'edit'
+		- @question_tags.each do |t|
+			= text_field_tag 'tags[]', t.tag_id, :type => 'hidden'
+
 	%p
 		= f.label :title
 		%br
@@ -10,9 +15,13 @@
 	.search-tag
 		.tag-editor
 			%span.posted-tags
+				- if params[:action] == 'edit'
+					- @question_tags.each do |t|
+						%span{:class => 'post-tag'}
+							= Tag.find(t.tag_id).name
+							%span{:class => 'delete-tag'}
+
 			= text_field_tag :q, nil, :autocomplete => 'off', :id => 'search_tags'
 		.tag-suggestions
-	//%p
-	//	= text_field_tag "tags[]", Tag.first.id
 	%p
 		= f.submit

@@ -11,8 +11,10 @@
 		%p
 			= post.body
 	.question-taglist
-		- @question.question_tags.each do |t|
-			= t.tag_id
+
+		- @question_tags.each do |t|
+			.post-tag{:title => Tag.find(t.tag_id).about}
+				= Tag.find(t.tag_id).name
 
 	.author-q-block
 		.user-action-time

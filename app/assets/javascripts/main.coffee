@@ -119,13 +119,10 @@ $ ->
 					name = el.attr('name')
 					box.hide()
 					$('.posted-tags').append('<span class="post-tag">' + name + '<span class="delete-tag" title="' + name + '"></span></span>')
-					$('#new_question').append('<input id="tags_' + name + '" name="tags[]" type="hidden" value="' + id + '">')
+					$('#new-question-form form').append('<input id="tags_' + name + '" name="tags[]" type="hidden" value="' + id + '">')
 
 					$('.post-tag').click ->
-						console.log($(this))
 						$(this).remove()
-
-
 
 		input.click ->
 			box.slideDown() if box.html()
