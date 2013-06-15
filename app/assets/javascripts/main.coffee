@@ -69,19 +69,18 @@ $ ->
 		url = form.serialize() 		
 		$.ajax
  			type: "GET"
- 			dataType: "json"
  			url: '/questions/search?' + url
  			dataType: 'json'
- 			success: (data) ->	
- 				output = ''			
- 				$.each(data, -> 
+ 			success: (data) ->
+ 				output = ''
+ 				$.each(data, ->
  					el = $(this)[0]					
  					output += '<a href="/questions/' + el.id + '"">' + el.title + '</a>'	
  				)				
  				box.html(output).show()
 
  	form.mouseleave ->
- 			box.slideUp() if $('#search_res').html() 
+ 		box.slideUp() if $('#search_res').html()
  	input.click ->
  		box.slideDown() if $('#search_res').html() 
 
@@ -89,3 +88,44 @@ $ ->
  		box.html('')
  		input.val('')
  		false
+
+
+$ ->
+	# Search for tags input.
+	input = $('#search_tags')
+	box = $('.tag-suggestions')
+	tag = $('._tag')
+
+	input.keyup ->
+		url = $(this).serialize()
+		$.ajax
+			type: 'GET'
+			url : '/questions/search_tag?' + url
+			success: (data) ->
+				data =  JSON.parse(data)
+				output = ''
+				$.each(data, ->
+					el = $(this)[0]
+					output += '<div class="_tag" id="' + el.id + '" name="' + el.name + '"><div class="post-tag">' + el.name + '</div>' +
+								 '<p>' + el.about + '</p>' +
+								 '<div class="more-info"><a href="/tags">learn more</a></div>' +
+								 '</div>'
+				)
+				box.html(output).show()
+
+				$('._tag').click ->
+					el = $(this)
+					id = el.attr('id')
+					name = el.attr('name')
+					box.hide()
+					$('.posted-tags').append('<span class="post-tag">' + name + '<span class="delete-tag" title="' + name + '"></span></span>')
+					$('#new_question').append('<input id="tags_' + name + '" name="tags[]" type="hidden" value="' + id + '">')
+
+					$('.post-tag').click ->
+						console.log($(this))
+						$(this).remove()
+
+
+
+		input.click ->
+			box.slideDown() if box.html()

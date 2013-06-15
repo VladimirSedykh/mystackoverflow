@@ -242,6 +242,17 @@ textarea
 	height : 150px
 	resize : vertical
 
+
+
+.search-tag
+	position : relative
+	input
+		width: auto
+		border: none
+		margin: 0
+		box-shadow : none
+	&:focus
+		box-shadow: none
 .search-question
 	position : relative
 	#search_form
@@ -280,8 +291,79 @@ textarea
 		box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.19)
 		-moz-box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.19)
 		-webkit-box-shadow: 0px 6px 13px rgba(0, 0, 0, 0.19)
-		a	
+		a
 			padding: 5px 5px 5px 10px
 			display : block
 			&:hover
-				background : #E8E8E8 
+				background : #E8E8E8
+
+	.tag-suggestions
+		@extend #search_res
+		font-size: 11px
+		background-color: #ffffff
+		border: 1px solid #777
+		padding: 5px
+		z-index: 300
+		width : 99%
+		left : 0
+		._tag
+			cursor: pointer
+			padding: 5px
+			width: 200px
+			overflow: hidden
+			display: inline-block
+			vertical-align: top
+			position: relative
+			border : 2px solid transparent
+			&:hover
+				background-color : #ffe6bf
+				border : 2px solid rgb(240, 211, 137)
+			.more-info
+				position: absolute
+				right: 5px
+				top: 5px
+				padding: 3px
+				a
+					background: none
+					padding : 0
+		p
+			font-size: 11px
+			line-height: 12px
+			display: block
+			float: left
+			margin-top: 5px
+			width: 100%
+
+	.post-tag
+		color: #3E6D8E
+		background-color: #E0EAF1
+		border-bottom: 1px solid #b3cee1
+		border-right: 1px solid #b3cee1
+		padding: 3px 4px 3px 4px
+		margin: 4px 3px
+		text-decoration: none
+		font-size: 90%
+		line-height: 1.5
+		float: left
+		white-space: nowrap
+		height: 14px
+		.delete-tag
+			vertical-align: top
+			margin-top: 1px
+			margin-left: 3px
+			background-position: 0px -690px
+			width: 14px
+			cursor: pointer
+			height: 14px
+			display: inline-block
+			background-image: image-url('sprites.png')
+			&:hover
+				background-position: 0px -665px
+
+	.tag-editor
+		border: 1px solid #999
+		cursor: text
+		background-color: White
+		position: relative
+		overflow: hidden
+		white-space: nowrap

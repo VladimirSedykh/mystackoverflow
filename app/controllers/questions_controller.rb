@@ -53,13 +53,14 @@ class QuestionsController < ApplicationController
 			Tag.find_all_by_id(params[:tags]).each do |tag|
 				# QuestionTag.create(:question => @question, :tag => tag)
 				@question.question_tags.create(:tag => tag)
-			end	
+			end
 			redirect_to root_path
 
 		else
 			render :action => "new"
 		end
 	end
+
 
 	# PUT /questions/1
   def edit  	
@@ -76,13 +77,21 @@ class QuestionsController < ApplicationController
 	  end
 	end
 
+
 	def search
 		@search = Question.by_content(params[:q])
 		respond_to do |format|
 			format.html
-      format.js { render :json => @search}
+         format.js { render :json => @search}
     end
+	end
 
+	def search_tag
+		@search_tag = Tag.by_name(params[:q])
+
+		respond_to do |format|
+			format.js { render :json => @search_tag.to_json}
+		end
 	end
 
 	# DELETE /questions/1

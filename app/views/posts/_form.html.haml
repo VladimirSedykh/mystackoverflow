@@ -7,10 +7,12 @@
 		= f.label :body
 		%br
 		= f.text_area :body
-
-	%p 
-		= text_field_tag "tags[]", Tag.first.id	
-	%p 
-		= text_field_tag "tags[]", Tag.last.id			
+	.search-tag
+		.tag-editor
+			%span.posted-tags
+			= text_field_tag :q, nil, :autocomplete => 'off', :id => 'search_tags'
+		.tag-suggestions
+	//%p
+	//	= text_field_tag "tags[]", Tag.first.id
 	%p
 		= f.submit
