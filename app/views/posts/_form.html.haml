@@ -1,8 +1,8 @@
 = form_for post, :url => url do |f|
 
-	- if params[:action] == 'edit'
-		- @question_tags.each do |t|
-			= text_field_tag 'tags[]', t.tag_id, :type => 'hidden'
+	-#- if params[:action] == 'edit'
+	-#	- @question_tags.each do |t|
+	-#		= text_field_tag 'tags[]', t.tag_id, :type => 'hidden'
 
 	%p
 		= f.label :title
@@ -17,7 +17,8 @@
 			%span.posted-tags
 				- if params[:action] == 'edit'
 					- @question_tags.each do |t|
-						%span{:class => 'post-tag'}
+
+						%span{:class => 'post-tag', :id => t.tag_id}
 							= Tag.find(t.tag_id).name
 							%span{:class => 'delete-tag'}
 

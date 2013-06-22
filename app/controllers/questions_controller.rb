@@ -79,7 +79,6 @@ class QuestionsController < ApplicationController
 			   # QuestionTag.create(:question => @question, :tag => tag)
 			   @question.question_tags.create(:tag => tag)
 			end
-
 	    redirect_to :action => :show, :id => @question.id
 	  else
 	    render 'edit'

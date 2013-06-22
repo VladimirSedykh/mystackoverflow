@@ -3,19 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="1c049043-eaf1-4492-b622-c340c6111637" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/_form.html.haml" afterPath="$PROJECT_DIR$/app/views/posts/_form.html.haml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/posts/_post.html.haml" afterPath="$PROJECT_DIR$/app/views/posts/_post.html.haml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/main.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/main.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/sass/main.sass" afterPath="$PROJECT_DIR$/app/assets/stylesheets/sass/main.sass" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/questions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/questions_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/tag.rb" afterPath="$PROJECT_DIR$/app/models/tag.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="stackoverflow.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371286208865" ignored="false" />
+    <file path="/Dummy.txt" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371908008795" ignored="false" />
     <file path="/a.rxml" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371286611698" ignored="false" />
     <file path="/20130528195025_create_taglist.rb" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371226682906" ignored="false" />
     <file path="/new.html.erb" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371292953354" ignored="false" />
-    <file path="/_form.html.haml" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371308793159" ignored="false" />
+    <file path="/_form.html.haml" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371910351314" ignored="false" />
     <file path="/a.css" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371286617793" ignored="false" />
     <file path="/a.coffee" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371286616112" ignored="false" />
     <file path="/a.html" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371286631753" ignored="false" />
@@ -26,9 +25,9 @@
     <file path="/a.scss" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371286657588" ignored="false" />
     <file path="/routes.rb" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371294125159" ignored="false" />
     <file path="/show.html.haml" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371286997323" ignored="false" />
-    <file path="/questions_controller.rb" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371307289309" ignored="false" />
+    <file path="/questions_controller.rb" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371913164633" ignored="false" />
     <file path="/tag.rb" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371292039163" ignored="false" />
-    <file path="/main.coffee" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371309362612" ignored="false" />
+    <file path="/main.coffee" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371912931524" ignored="false" />
     <file path="/tags_controller.rb" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371293658916" ignored="false" />
     <file path="/search.html.haml" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371288567120" ignored="false" />
     <file path="/search_tag.js.erb" changelist="1c049043-eaf1-4492-b622-c340c6111637" time="1371295978097" ignored="false" />
@@ -55,55 +54,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="questions_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="questions_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/questions_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="17" selection-start="1440" selection-end="1454" vertical-scroll-proportion="0.0">
+            <state line="80" column="12" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.5147059">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/questions/edit.html.erb">
+      <file leaf-file-name="post.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/post.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="26" column="18" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/posts/_form.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="46" selection-start="446" selection-end="446" vertical-scroll-proportion="-12.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_post.html.haml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/posts/_post.html.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="35" selection-start="307" selection-end="330" vertical-scroll-proportion="-10.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.coffee" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.coffee" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/main.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="41" selection-start="3175" selection-end="3175" vertical-scroll-proportion="0.64248705">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.sass" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/sass/main.sass">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="345" column="25" selection-start="6248" selection-end="6248" vertical-scroll-proportion="-11.774194">
+            <state line="145" column="45" selection-start="3501" selection-end="3501" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -134,15 +106,15 @@
         <option value="$PROJECT_DIR$/app/controllers/tags_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/models/question.rb" />
-        <option value="$PROJECT_DIR$/app/models/tag.rb" />
         <option value="$PROJECT_DIR$/app/views/questions/search_tag.js.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/sass/main.sass" />
         <option value="$PROJECT_DIR$/app/views/posts/_post.html.haml" />
         <option value="$PROJECT_DIR$/app/models/post.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/questions_controller.rb" />
+        <option value="$PROJECT_DIR$/app/models/tag.rb" />
         <option value="$PROJECT_DIR$/app/views/posts/_form.html.haml" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/main.coffee" />
+        <option value="$PROJECT_DIR$/app/controllers/questions_controller.rb" />
       </list>
     </option>
   </component>
@@ -195,7 +167,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -246,11 +217,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stackoverflow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stackoverflow" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="questions" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -268,11 +249,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="posts" />
+              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -287,17 +264,27 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="appearance" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../js_tasks" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
@@ -338,7 +325,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23170732" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2398374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -414,114 +401,106 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/tag.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="28" selection-start="282" selection-end="282" vertical-scroll-proportion="0.16544117">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/tags_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="210" selection-end="210" vertical-scroll-proportion="0.2757353">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/questions/_search_form.html.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="26" selection-start="265" selection-end="265" vertical-scroll-proportion="0.09469697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1166" column="19" selection-start="17236" selection-end="17236" vertical-scroll-proportion="0.7409714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/taglists_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="23" selection-start="182" selection-end="182" vertical-scroll-proportion="0.20220588">
-          <folding />
-        </state>
+        <state line="11" column="23" selection-start="182" selection-end="182" vertical-scroll-proportion="0.20220588" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="36" selection-start="932" selection-end="956" vertical-scroll-proportion="0.6985294">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/sass/main.sass">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="345" column="25" selection-start="6248" selection-end="6248" vertical-scroll-proportion="-11.774194">
-          <folding />
-        </state>
+        <state line="38" column="36" selection-start="932" selection-end="956" vertical-scroll-proportion="0.6985294" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20130523195502_create_tag.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="32" selection-start="258" selection-end="258" vertical-scroll-proportion="0.29456383">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/question.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/post.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="33" selection-start="414" selection-end="414" vertical-scroll-proportion="0.22058824">
-          <folding />
-        </state>
+        <state line="16" column="32" selection-start="258" selection-end="258" vertical-scroll-proportion="0.29456383" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/questions/show.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="19" selection-start="215" selection-end="215" vertical-scroll-proportion="0.11363637">
-          <folding />
-        </state>
+        <state line="12" column="19" selection-start="215" selection-end="215" vertical-scroll-proportion="0.11363637" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/questions_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/sass/main.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="17" selection-start="1440" selection-end="1454" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/questions/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="345" column="25" selection-start="6248" selection-end="6248" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/posts/_post.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="35" selection-start="307" selection-end="330" vertical-scroll-proportion="-10.0">
+        <state line="13" column="34" selection-start="222" selection-end="222" vertical-scroll-proportion="0.2542373">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="28" selection-start="621" selection-end="621" vertical-scroll-proportion="0.2465234">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/questions/destroy.js.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/questions/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="7" selection-start="628" selection-end="628" vertical-scroll-proportion="0.47348484">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/posts/_form.html.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="46" selection-start="446" selection-end="446" vertical-scroll-proportion="-12.5">
+        <state line="26" column="33" selection-start="605" selection-end="605" vertical-scroll-proportion="0.49242425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/question.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="6" selection-start="159" selection-end="159" vertical-scroll-proportion="0.12867647">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="9" selection-start="92" selection-end="92" vertical-scroll-proportion="0.09191176">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/tag.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="20" selection-start="256" selection-end="256" vertical-scroll-proportion="0.16053921">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/main.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="41" selection-start="3175" selection-end="3175" vertical-scroll-proportion="0.64248705">
+        <state line="145" column="45" selection-start="3501" selection-end="3501" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/post.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="18" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/questions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="12" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.5147059">
           <folding />
         </state>
       </provider>

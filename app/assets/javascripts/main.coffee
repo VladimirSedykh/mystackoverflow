@@ -95,34 +95,72 @@ $ ->
 	input = $('#search_tags')
 	box = $('.tag-suggestions')
 	tag = $('._tag')
+	added = {}
+	reserved = {}
+	deleted = {}
+
+	$.each($('.post-tag'), ->
+		id = $(this).attr('id')
+		added[id] = id
+		reserved[id] = id
+	)
+
+	# remove tag from added tags.
+	removeTag = () ->
+		$('.delete-tag').on "click", ->
+			el = $(this).parent()
+			id = el.attr('id')
+			deleted[id] = id;
+			delete added[id]
+			$('#tags_' + id).remove()
+			el.remove()
+
+	removeTag()
 
 	input.keyup ->
 		url = $(this).serialize()
-		$.ajax
-			type: 'GET'
-			url : '/questions/search_tag?' + url
-			success: (data) ->
-				data =  JSON.parse(data)
-				output = ''
-				$.each(data, ->
-					el = $(this)[0]
-					output += '<div class="_tag" id="' + el.id + '" name="' + el.name + '"><div class="post-tag">' + el.name + '</div>' +
-								 '<p>' + el.about + '</p>' +
-								 '<div class="more-info"><a href="/tags">learn more</a></div>' +
-								 '</div>'
-				)
-				box.html(output).show()
 
-				$('._tag').click ->
-					el = $(this)
-					id = el.attr('id')
-					name = el.attr('name')
-					box.hide()
-					$('.posted-tags').append('<span class="post-tag">' + name + '<span class="delete-tag" title="' + name + '"></span></span>')
-					$('#new-question-form form').append('<input id="tags_' + name + '" name="tags[]" type="hidden" value="' + id + '">')
+		# if q is not empty check.
+		if url.split('').length > 2
+			$.ajax
+				type: 'GET'
+				url : '/questions/search_tag?' + url
+				success: (data) ->
+					data =  JSON.parse(data)
+					output = ''
+					$.each(data, ->
+						el = $(this)[0]
+						output += '<div class="_tag" id="' + el.id + '" name="' + el.name +
+									 '"><div class="post-tag">' + el.name + '</div>' +
+									 '<p>' + el.about + '</p>' +
+									 '<div class="more-info"><a href="/tags">learn more</a></div>' +
+									 '</div>'
+					)
+					box.html(output).show()
 
-					$('.post-tag').click ->
-						$(this).remove()
+					# Append searched tag to the list of tags.
+					$('._tag').click ->
+						el = $(this)
+						id = el.attr('id')
+						name = el.attr('name')
+
+						if added[id] != id
+							box.hide()
+							$('.posted-tags').append('<span class="post-tag" id="' + id + '">' + name + '<span class="delete-tag" title="' + name + '"></span></span>')
+
+							# For edit method:  if reserved[id] != id.
+							if reserved[id] != id
+								$('#new-question-form form').append('<input id="tags_' + id + '" name="tags[]" type="hidden" value="' + id + '">')
+
+							delete deleted[id]
+							added[id] = id
+							removeTag()
+		else
+			box.slideUp()
 
 		input.click ->
 			box.slideDown() if box.html()
+		input.focusout ->
+			box.slideUp()
+
+		console.log deleted
