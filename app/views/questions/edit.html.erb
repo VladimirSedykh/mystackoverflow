@@ -1,26 +1,26 @@
 <ul class="breadcrumb">
-	<li>
-		<%= link_to 'Main', root_path %>
-		<span class="divider">|</span>
-	</li>
-	<li>
-		<%= link_to 'questions', questions_path %>
-		<span class="divider">|</span>
-	</li>
-	<li>
-		<%= link_to 'New', new_question_path %>
-		<span class="divider">|</span>
-	</li>
+  <li>
+    <%= link_to 'Main', root_path %>
+    <span class="divider">|</span>
+  </li>
+  <li>
+    <%= link_to 'questions', questions_path %>
+    <span class="divider">|</span>
+  </li>
+  <li>
+    <%= link_to 'New', new_question_path %>
+    <span class="divider">|</span>
+  </li>
 </ul>
 
 <div class="search-question">
-	<%= render 'questions/search_form' %>
+  <%= render 'questions/search_form' %>
 
 <div class="new-question-form" id="new-question-form">
 
 <legend>Edit question :</legend>
 <%= render :partial => "posts/form", :locals => { :post => @question, :url => { :action => "update" }} %>
 
-	<%= link_to 'Back', root_path, :class => "btn btn-primary" %>
+  <%= link_to 'Back', root_path, :class => "btn btn-primary" %>
  
 </div>

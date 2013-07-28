@@ -1,32 +1,32 @@
 %ul{ :class => "breadcrumb" }
-	%li 
-		%a 
-			= link_to 'Main', root_path
-			%span{ :class => "divider"} 
-				|
-	%li 
-		%a 
-			= link_to 'questions', questions_path
-			%span{ :class => "divider"} 
-				|
-	%li			
-		%a 
-			= @question.id 
-			%span{ :class => "divider"} 
+  %li 
+    %a 
+      = link_to 'Main', root_path
+      %span{ :class => "divider"} 
+        |
+  %li 
+    %a 
+      = link_to 'questions', questions_path
+      %span{ :class => "divider"} 
+        |
+  %li      
+    %a 
+      = @question.id 
+      %span{ :class => "divider"} 
 
 .search-question
-	= render 'questions/search_form'
-								
+  = render 'questions/search_form'
+                
 = render :partial => "posts/post", :locals => { :post => @question }
 
 .ask_question
-	%h1 
-		= @question.answers.count
-		Answers
-		%hr
-	// Viberem vse anseveri konkretnogo questiona.
-	- @question.answers.each do |answer|
-		= render :partial => "posts/post", :locals => { :post => answer }
+  %h1 
+    = @question.answers.count
+    Answers
+    %hr
+  // Viberem vse anseveri konkretnogo questiona.
+  - @question.answers.each do |answer|
+    = render :partial => "posts/post", :locals => { :post => answer }
 
-	%h1 Your question
-	= render :partial => "posts/form", :locals => { :post => @answer, :url => question_answers_path(@question)}
+  %h1 Your question
+  = render :partial => "posts/form", :locals => { :post => @answer, :url => question_answers_path(@question)}

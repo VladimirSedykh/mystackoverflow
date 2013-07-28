@@ -9,7 +9,7 @@ Stackoverflow::Application.routes.draw do
     resources :questions do 
       collection do
         get 'search'
-	     get 'search_tag'
+	      get 'search_tag'
       end
       resources :answers, :only => [ :create, :update, :destroy ]
     end  

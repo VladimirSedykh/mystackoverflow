@@ -1,30 +1,30 @@
 .div{:id => "question_#{question.id}", :class => 'question-summary'}
-	.statscontainer
-		.statsarrow
-		.votes
-			.mini-counts
-				345
-			.div votes
-		.answers
-			.mini-counts			
-				= question.answers.all.count
-			.div answers
-		.views
-			.mini-counts
-				= question.view
-			.div views
-	.summary
-		%h3
-			= link_to question.title, question			
-		.excerpt
-			= question.body
-		.user-info
-			.user-action-time
-				Action time
-			.user-details
-				User id: 
-				= question.user_id
-			.destroy-btn
-				= link_to "Destroy",  question, :confirm => "Sure?", :method => "delete", :remote => true, :class => 'delete_post'	
-			.edit-btn
-				= link_to 'Edit', edit_question_path(question)		
+  .statscontainer
+    .statsarrow
+    .votes
+      .mini-counts
+        345
+      .div votes
+    .answers
+      .mini-counts      
+        = question.answers.all.count
+      .div answers
+    .views
+      .mini-counts
+        = question.view
+      .div views
+  .summary
+    %h3
+      = link_to question.title, question      
+    .excerpt
+      = question.body
+    .user-info
+      .user-action-time
+        Action time
+      .user-details
+        User id: 
+        = question.user_id
+      .destroy-btn
+        = link_to "Destroy",  question, :confirm => "Sure?", :method => "delete", :remote => true, :class => 'delete_post'  
+      .edit-btn
+        = link_to 'Edit', edit_question_path(question)    

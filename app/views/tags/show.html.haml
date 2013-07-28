@@ -1,29 +1,29 @@
 %ul{ :class => "breadcrumb" }
-	%li 
-		%a 
-			= link_to 'Main', root_path
-			%span{ :class => "divider"} 
-				|
-	%li 
-		%a 
-			= link_to 'Tags', posts_path
-			%span{ :class => "divider"} 
-				|
-	%li			
-		%a 
-			= @tag.id 
-			%span{ :class => "divider"} 				
+  %li 
+    %a 
+      = link_to 'Main', root_path
+      %span{ :class => "divider"} 
+        |
+  %li 
+    %a 
+      = link_to 'Tags', posts_path
+      %span{ :class => "divider"} 
+        |
+  %li      
+    %a 
+      = @tag.id 
+      %span{ :class => "divider"}         
 
 %h3 
-	= @tag.name
+  = @tag.name
 %p
-	= @tag.about
+  = @tag.about
 
 .author-q-block
-	.user-action-time
-		%span{ :title => @tag.created_at.strftime("%B %d'%y at %H:%M")} 
-			asked
-			= @tag.created_at.strftime("%B %d'%y at %H:%M")
-		%hr
+  .user-action-time
+    %span{ :title => @tag.created_at.strftime("%B %d'%y at %H:%M")} 
+      asked
+      = @tag.created_at.strftime("%B %d'%y at %H:%M")
+    %hr
 
 

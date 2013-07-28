@@ -1,26 +1,26 @@
 %ul{ :class => "breadcrumb" }
-	%li
-		%a
-			= link_to 'Main', root_path
-			%span{ :class => "divider"}
-				|
-		%a
-			= link_to 'Search', search_path
-			%span{ :class => "divider"}
-				|
+  %li
+    %a
+      = link_to 'Main', root_path
+      %span{ :class => "divider"}
+        |
+    %a
+      = link_to 'Search', search_path
+      %span{ :class => "divider"}
+        |
 
 .search-question
-	%p
-		Type to find questions:
-	= render 'questions/search_form'
+  %p
+    Type to find questions:
+  = render 'questions/search_form'
 
 .subheader
-	%h1
-		Seach results..
+  %h1
+    Seach results..
 - if @search.empty?
-	.div{ :class => "div question-summary"}
-		No Questions with Title like :
-		%strong
-			= params[:q]
+  .div{ :class => "div question-summary"}
+    No Questions with Title like :
+    %strong
+      = params[:q]
 - else
-	= render @search
+  = render @search

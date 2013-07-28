@@ -27,8 +27,8 @@ gem 'devise'
 gem 'haml'
 gem 'pry'
 group :production do
-	gem 'pg'
-	#gem 'activerecord-postgresql-adapter'
+  gem 'pg'
+  #gem 'activerecord-postgresql-adapter'
 end
 
 gem 'will_paginate', '3.0.4'

@@ -1,35 +1,35 @@
 %ul{ :class => "breadcrumb" }
-	%li 
-		%a 
-			= link_to 'Main', root_path
-			%span{ :class => "divider"} 
-				|
-	%li 
-		%a 
-			= link_to 'Tags', tags_path
-			%span{ :class => "divider"} 
-				|
-	%li			
-		%a 
-			New
-			%span{ :class => "divider"}  
+  %li 
+    %a 
+      = link_to 'Main', root_path
+      %span{ :class => "divider"} 
+        |
+  %li 
+    %a 
+      = link_to 'Tags', tags_path
+      %span{ :class => "divider"} 
+        |
+  %li      
+    %a 
+      New
+      %span{ :class => "divider"}  
 
 .subheader
-	%h1
-		Create new tag:
+  %h1
+    Create new tag:
 
 .div{ :class => "new-question-form", :id => "new-question-form" }
-	= form_for :tag, :url => { :action => :create } do |f|
-		%p
-			= f.label :name
-			%br
-			= f.text_field :name
-		%p
-			= f.label :about
-			%br
-			= f.text_area :about	
-		%p
-			= f.submit
+  = form_for :tag, :url => { :action => :create } do |f|
+    %p
+      = f.label :name
+      %br
+      = f.text_field :name
+    %p
+      = f.label :about
+      %br
+      = f.text_area :about  
+    %p
+      = f.submit
 
-	= link_to 'Back to tag list', tags_path, :class => 'btn btn-primary'		
-	
+  = link_to 'Back to tag list', tags_path, :class => 'btn btn-primary'    
+  

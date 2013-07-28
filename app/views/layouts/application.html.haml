@@ -1,51 +1,51 @@
 !!!
 %html
-	%head
-		%title
-			Stackoverflow
-		= favicon_link_tag 'favicon.ico'
-		= javascript_include_tag "application"
-		= stylesheet_link_tag "application", :media => "all"
-		= csrf_meta_tags
+  %head
+    %title
+      Stackoverflow
+    = favicon_link_tag 'favicon.ico'
+    = javascript_include_tag "application"
+    = stylesheet_link_tag "application", :media => "all"
+    = csrf_meta_tags
 
-	%body
+  %body
 
-		.div{ :class => "navbar navbar-inverse clearfix"}
-			.div{ :class => "navbar-inner", :id => "custom-header"}
-				.wrapper960
-					- if user_signed_in? 
-						%span{ :class => "brand"} 
-							= current_user.email
-						%span{ :class => "brand"}	
-							= current_user.id
-						%span	
-							= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn'
-					- else 
-						%span
-							= link_to 'Sign in', new_user_session_path, :class => 'btn'
-							= link_to 'Sign on', new_user_registration_path, :class => 'btn'	
-			.wrapper960
-				#header	
-					#hlogo
-						%h1
-							Stackoverflow	
-						= link_to '', root_path							
-					#hmenus	
-						.div{ :class => "nav mainnavs mainnavsanon"}
-							%ul
-								%li
-									= link_to 'Questions', questions_path
-								%li
-									= link_to 'Tags', tags_path
-								%li
-									= link_to 'Tour', '#'
-								%li
-									= link_to 'Users', '#'
-						.div{ :class => "nav askquestion"}		
-							%ul
-								%li	
-									= link_to 'Ask Question', new_question_path, :id => 'nav-askquestion'
-		
-		%section{ :class => "content-section"} 	
-			.wrapper960		
-				= yield
+    .div{ :class => "navbar navbar-inverse clearfix"}
+      .div{ :class => "navbar-inner", :id => "custom-header"}
+        .wrapper960
+          - if user_signed_in? 
+            %span{ :class => "brand"} 
+              = current_user.email
+            %span{ :class => "brand"}  
+              = current_user.id
+            %span  
+              = link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn'
+          - else 
+            %span
+              = link_to 'Sign in', new_user_session_path, :class => 'btn'
+              = link_to 'Sign on', new_user_registration_path, :class => 'btn'  
+      .wrapper960
+        #header  
+          #hlogo
+            %h1
+              Stackoverflow  
+            = link_to '', root_path              
+          #hmenus  
+            .div{ :class => "nav mainnavs mainnavsanon"}
+              %ul
+                %li
+                  = link_to 'Questions', questions_path
+                %li
+                  = link_to 'Tags', tags_path
+                %li
+                  = link_to 'Tour', '#'
+                %li
+                  = link_to 'Users', '#'
+            .div{ :class => "nav askquestion"}    
+              %ul
+                %li  
+                  = link_to 'Ask Question', new_question_path, :id => 'nav-askquestion'
+    
+    %section{ :class => "content-section"}   
+      .wrapper960    
+        = yield

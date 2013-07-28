@@ -1,22 +1,22 @@
 %ul{ :class => "breadcrumb" }
-	%li 
-		%a 
-			= link_to 'Main', root_path
-			%span{ :class => "divider"} 
-				|
-	%li 
-		%a 
-			= link_to 'Tags', tags_path
-			%span{ :class => "divider"} 
-				|
+  %li 
+    %a 
+      = link_to 'Main', root_path
+      %span{ :class => "divider"} 
+        |
+  %li 
+    %a 
+      = link_to 'Tags', tags_path
+      %span{ :class => "divider"} 
+        |
 
 .subheader
-	%h1
-		All Tags
+  %h1
+    All Tags
 
-.tags_list	
-	%table{ :class => "table table-striped table-bordered table-hover" }
-		%tr
-			= render @tags
+.tags_list  
+  %table{ :class => "table table-striped table-bordered table-hover" }
+    %tr
+      = render @tags
 
-= link_to 'Create new Tag', new_tag_path, :class => 'btn btn-primary'	
+= link_to 'Create new Tag', new_tag_path, :class => 'btn btn-primary'  
