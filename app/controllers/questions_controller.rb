@@ -1,26 +1,11 @@
+require "will_paginate/array"
+
 class QuestionsController < ApplicationController
 
   # GET /questions
   def index
-
-    @questions = if params[:tab] == "my"      
-      Question.my(current_user)
-    elsif params[:tab] == "today"    
-      Question.today
-    elsif params[:tab] == "week"      
-      Question.week
-    elsif params[:tab] == "month"      
-      Question.month
-    elsif params[:tab] == "fre"      
-      Question.frequent
-    elsif params[:search_q] == "result"      
-      Question.serach_q
-    else
-      Question
-    end
-
+    @questions = Question.by_tab(params[:tab], current_user)#.by_user(current_user)
     @questions = @questions.paginate(:page => params[:page], :per_page => 4)
-    # @questions = question.by_tab(params[:tab]).by_user(user)
   end
 
   # GET /questions/1
