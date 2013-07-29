@@ -6,5 +6,4 @@ class Tag < ActiveRecord::Base
   attr_accessible :name, :about, :related_tags, :questions_tagged
 
   scope :by_name, lambda { |q| where("name LIKE ?", "%#{q}%") }
-
 end

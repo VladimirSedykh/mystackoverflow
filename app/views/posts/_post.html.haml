@@ -10,11 +10,11 @@
   .question-text
     %p
       = post.body
-  .question-taglist
-
-    - @question_tags.each do |t|
-      .post-tag{:title => Tag.find(t.tag_id).about}
-        = Tag.find(t.tag_id).name
+  - if post.is_question?
+    .question-taglist
+      - @question_tags.each do |t|
+        .post-tag{:title => Tag.find(t.tag_id).about}
+          = Tag.find(t.tag_id).name
 
   .author-q-block
     .user-action-time
