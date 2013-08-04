@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
-	attr_accessible :title, :body, :user_id, :view, :is_question
+	attr_accessible :title, :body, :user_id, :view, :is_question, :question_id
 
   #validates :is_question, :presence => true
 	validates :title, :presence => true,
@@ -12,11 +12,11 @@ class Post < ActiveRecord::Base
 	# 	Post.send method
 	# end
 
-  scope :my, lambda { |user| where(user_id: user.id) }
+  scope :my, lambda { |user| where(user_id: user.try(:id)) }
   scope :today, where(created_at: 1.day.ago..Time.now)
   scope :week, where(created_at: 1.week.ago..Time.now)
   scope :month, where(created_at: 1.month.ago..Time.now) 
-  scope :frequent, order( "view desc").limit(10)
+  scope :fre, order("view desc").limit(10)
 
   # scope :search_q, lambda { |q| where(title: q) }
   scope :by_content, lambda { |q| where("title LIKE ? OR body LIKE ?", "%#{q}%", "%#{q}%") }
